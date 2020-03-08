@@ -22,6 +22,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+/*
+
+  Client for parallelism testing.
+
+  Can control run time, exit code, die by signal, message at exit, by
+  command line parameters.
+
+*/
+
 #include <sys/types.h>
 #include <unistd.h>
 #include <stdio.h>
