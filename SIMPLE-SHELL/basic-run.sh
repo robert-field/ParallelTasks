@@ -34,9 +34,12 @@ NUM_CLIENTS=5
 
 for one_client in `seq $NUM_CLIENTS`
 do
-  sample_client -m "CLIENT $one_client A" -d `expr $NUM_CLIENTS + 2  - $one_client` &
-  sample_client -m "CLIENT $one_client B" -d `expr $NUM_CLIENTS + 2  - $one_client` &
-  sample_client -m "CLIENT $one_client C" -d `expr $NUM_CLIENTS + 2  - $one_client` &
+    delay_amount=$(($NUM_CLIENTS + 2 - $one_client))
+    # do several at once, they won't always finish in A B C order
+    for identifier in A B C
+    do
+	sample_client -m "CLIENT $one_client $identifier" -d $delay_amount &
+    done
 done
 
 wait
