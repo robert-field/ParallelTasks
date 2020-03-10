@@ -38,6 +38,18 @@ have a pipeline like
 and this will run up to 8 processes in parallel till all the `.png`
 files have been processed.
 
+**Client program**
+
 For examples of `xargs` usage, this directory has a `countargs`
 program that tells how many arguments it is called with, so see what
 `xargs` is doing.
+
+**Driver Scripts**
+
+`single_args` - run 8 instances of `countargs` in parallel, with just
+one parameter.
+
+`many_args` - run 8 instances of `countargs` in parallel, with thirty
+parameters.
+
+You can see the difference in what is run.
