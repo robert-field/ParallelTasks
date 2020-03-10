@@ -1,0 +1,10 @@
+#!/bin/sh
+
+echo Have $# arguments, first is $1
+
+if [ $(($1 % 100)) -eq 99 ]
+then
+	sleep 1
+fi
+
+echo exit $1

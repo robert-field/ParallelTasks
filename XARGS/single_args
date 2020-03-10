@@ -1,0 +1,5 @@
+#/bin/sh
+
+# Run count args with one arg, and multiple process
+
+seq 10000 | xargs -P 8 -n 1 ./countargs
