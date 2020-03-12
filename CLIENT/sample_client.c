@@ -112,7 +112,15 @@ main (int argc, char *argv[])
   // program to end right after this
   if (user_message)
     {
-      puts (user_message);
+      if (delay_time < 0)
+	{
+	  puts (user_message);
+	}
+      else
+	{
+	  // if there is a delay time, include in the exit message
+	  printf ("%s: %d\n", user_message, delay_time);
+	}
     }
   if (signal_required)
     {
